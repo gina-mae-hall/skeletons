@@ -32,4 +32,19 @@ SET Thing = 1
 WHERE 0=0
 AND ... some args
 
+
+SELECT
+	TABLE_SCHEMA, COLUMN_NAME, DATA_TYPE, COLUMN_DEFAULT, IS_NULLABLE 
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE table_schema = 'upload'
+AND table_name = 'GeoHierarchyMappingV1'
+AND COLUMN_NAME IN ('State', 'IsRCM', 'InnVisionProper')
+UNION
+SELECT
+	TABLE_SCHEMA, COLUMN_NAME, DATA_TYPE, COLUMN_DEFAULT, IS_NULLABLE 
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE table_schema = 'mapping'
+AND table_name = 'GroupRetailUnit'
+AND COLUMN_NAME IN ('State', 'IsRCM', 'InnVisionProper')
+;
 ```
