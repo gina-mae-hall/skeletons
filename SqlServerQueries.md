@@ -1,5 +1,59 @@
-## MS Sql Server
+
+In MySql/Workbench style:
+
 ```sql
+
+-- Table creation
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50)
+);
+
+-- View creation
+CREATE VIEW active_employees AS
+SELECT id, name
+FROM employees
+WHERE department = 'IT';
+```
+
+## MS Sql Server
+
+```sql
+
+-- Table creation
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+
+-- Insert data
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+-- Update
+UPDATE table_name
+SET column1 = value1
+WHERE condition;
+
+
+-- Delete
+DELETE FROM table_name
+WHERE condition;
+
+-- View creation
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+-- Drop View
+DROP VIEW view_name;
+
+
+
+
 ALTER TABLE [DatabaseName].[mapping].[GroupRetailUnit]
 
 -- Adding new columns
